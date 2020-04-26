@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBPageGroupModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CIUDAD">
+    <Key>
+      <PropertyRef Name="ci_codigo" />
+    </Key>
+    <Property Name="ci_codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ci_descripcion" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="DBPageGroupEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CIUDAD" EntityType="Self.CIUDAD" />
+    <EntitySet Name="VENDEDOR" EntityType="DBPageGroupModel.VENDEDOR" />
+  </EntityContainer>
+  <EntityType Name="VENDEDOR">
+    <Key>
+      <PropertyRef Name="ve_codigo" />
+    </Key>
+    <Property Name="ve_codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ve_nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ve_apellido" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ve_numero_identificacion" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="ve_codigo_ciudad" Type="Int32" />
+    <Property Name="ve_estado" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+  </EntityType>
+</Schema>

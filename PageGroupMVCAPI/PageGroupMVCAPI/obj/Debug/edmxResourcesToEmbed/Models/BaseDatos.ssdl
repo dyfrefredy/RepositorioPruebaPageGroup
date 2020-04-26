@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBPageGroupModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CIUDAD">
+    <Key>
+      <PropertyRef Name="ci_codigo" />
+    </Key>
+    <Property Name="ci_codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ci_descripcion" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="VENDEDOR">
+    <Key>
+      <PropertyRef Name="ve_codigo" />
+    </Key>
+    <Property Name="ve_codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ve_nombre" Type="varchar" MaxLength="30" />
+    <Property Name="ve_apellido" Type="varchar" MaxLength="30" />
+    <Property Name="ve_numero_identificacion" Type="varchar" MaxLength="15" />
+    <Property Name="ve_codigo_ciudad" Type="int" />
+    <Property Name="ve_estado" Type="nchar" MaxLength="1" />
+  </EntityType>
+  <EntityContainer Name="DBPageGroupModelStoreContainer">
+    <EntitySet Name="CIUDAD" EntityType="Self.CIUDAD" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VENDEDOR" EntityType="Self.VENDEDOR" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

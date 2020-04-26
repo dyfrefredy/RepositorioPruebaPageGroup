@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DBPageGroupModelStoreContainer" CdmEntityContainer="DBPageGroupEntities">
+    <EntitySetMapping Name="CIUDAD">
+      <EntityTypeMapping TypeName="DBPageGroupModel.CIUDAD">
+        <MappingFragment StoreEntitySet="CIUDAD">
+          <ScalarProperty Name="ci_codigo" ColumnName="ci_codigo" />
+          <ScalarProperty Name="ci_descripcion" ColumnName="ci_descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VENDEDOR">
+      <EntityTypeMapping TypeName="DBPageGroupModel.VENDEDOR">
+        <MappingFragment StoreEntitySet="VENDEDOR">
+          <ScalarProperty Name="ve_estado" ColumnName="ve_estado" />
+          <ScalarProperty Name="ve_codigo_ciudad" ColumnName="ve_codigo_ciudad" />
+          <ScalarProperty Name="ve_numero_identificacion" ColumnName="ve_numero_identificacion" />
+          <ScalarProperty Name="ve_apellido" ColumnName="ve_apellido" />
+          <ScalarProperty Name="ve_nombre" ColumnName="ve_nombre" />
+          <ScalarProperty Name="ve_codigo" ColumnName="ve_codigo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

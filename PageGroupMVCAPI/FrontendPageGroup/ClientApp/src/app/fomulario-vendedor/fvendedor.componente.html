@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h3>Formulario Creación Nuevo Vendedor</h3>
+      <div class="form-group">
+        <label for="ControlNombre">Nombre</label>
+        <input type="text" [(ngModel)]="vendedor.nombre" class="form-control" placeholder="Nombre" />
+      </div>
+      <div class="form-group">
+        <label for="ControlNombre">Apellido</label>
+        <input type="text" [(ngModel)]="vendedor.apellido" class="form-control" placeholder="Apellido" />
+      </div>
+      <div class="form-group">
+        <label for="ControlNombre">Documento</label>
+        <input type="text" [(ngModel)]="vendedor.identificacion" class="form-control" placeholder="Numero de documento" />
+      </div>
+      <div class="form-group">
+        <label for="ControlNombre">Ciudad</label>
+        <select class="form-control" [(ngModel)]="opcionSeleccionado" (change)="capturar()"> class="form-control" id="codciudad">
+        <option value="0">Selecciona una opción</option>
+        <option *ngFor="let item of lstCiudades" [value]="item.codigo">{{ item.descripcion }}</option>
+        </select>
+      </div>
+      <p> {{ CampoObligatorio }}</p>
+      <button (click)="AgregarVendedor()" class="btn btn-primary">Crear</button>
+      <button (click)='collapse()' class='btn btn-primary' [routerLink]='["/vendedor"]'>Listado</button>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DBPageGroupModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CIUDAD">
+          <Key>
+            <PropertyRef Name="ci_codigo" />
+          </Key>
+          <Property Name="ci_codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ci_descripcion" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="VENDEDOR">
+          <Key>
+            <PropertyRef Name="ve_codigo" />
+          </Key>
+          <Property Name="ve_codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ve_nombre" Type="varchar" MaxLength="30" />
+          <Property Name="ve_apellido" Type="varchar" MaxLength="30" />
+          <Property Name="ve_numero_identificacion" Type="varchar" MaxLength="15" />
+          <Property Name="ve_codigo_ciudad" Type="int" />
+          <Property Name="ve_estado" Type="nchar" MaxLength="1" />
+        </EntityType>
+        <EntityContainer Name="DBPageGroupModelStoreContainer">
+          <EntitySet Name="CIUDAD" EntityType="Self.CIUDAD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VENDEDOR" EntityType="Self.VENDEDOR" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DBPageGroupModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CIUDAD">
+          <Key>
+            <PropertyRef Name="ci_codigo" />
+          </Key>
+          <Property Name="ci_codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ci_descripcion" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="DBPageGroupEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CIUDAD" EntityType="Self.CIUDAD" />
+          <EntitySet Name="VENDEDOR" EntityType="DBPageGroupModel.VENDEDOR" />
+        </EntityContainer>
+        <EntityType Name="VENDEDOR">
+          <Key>
+            <PropertyRef Name="ve_codigo" />
+          </Key>
+          <Property Name="ve_codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ve_nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ve_apellido" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ve_numero_identificacion" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="ve_codigo_ciudad" Type="Int32" />
+          <Property Name="ve_estado" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DBPageGroupModelStoreContainer" CdmEntityContainer="DBPageGroupEntities">
+          <EntitySetMapping Name="CIUDAD">
+            <EntityTypeMapping TypeName="DBPageGroupModel.CIUDAD">
+              <MappingFragment StoreEntitySet="CIUDAD">
+                <ScalarProperty Name="ci_codigo" ColumnName="ci_codigo" />
+                <ScalarProperty Name="ci_descripcion" ColumnName="ci_descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VENDEDOR">
+            <EntityTypeMapping TypeName="DBPageGroupModel.VENDEDOR">
+              <MappingFragment StoreEntitySet="VENDEDOR">
+                <ScalarProperty Name="ve_estado" ColumnName="ve_estado" />
+                <ScalarProperty Name="ve_codigo_ciudad" ColumnName="ve_codigo_ciudad" />
+                <ScalarProperty Name="ve_numero_identificacion" ColumnName="ve_numero_identificacion" />
+                <ScalarProperty Name="ve_apellido" ColumnName="ve_apellido" />
+                <ScalarProperty Name="ve_nombre" ColumnName="ve_nombre" />
+                <ScalarProperty Name="ve_codigo" ColumnName="ve_codigo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,28 @@
+<h1>{{ nombre }}</h1>
+<table class='table'>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Identificación</th>
+        <th>Ciudad</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let elemento1 of lstVendedores">
+        <td>{{ elemento1.nombre }}</td>
+        <td>{{ elemento1.apellido }}</td>
+        <td>{{ elemento1.identificacion }}</td>
+        <td>{{ elemento1.nombre_ciudad }}</td>
+        <td>
+          <button (click)='ActualizarVendedor(elemento1)' class='btn btn-primary'>Actualizar</button>
+        </td>
+        <td>
+          <button (click)='EliminarVendedor(elemento1)' class='btn btn-primary'>Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+<button (click)='collapse()' class='btn btn-primary' [routerLink]='["/fvendedor"]'>Nuevo</button>
